@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}AgriAdvisor - Government Schemes{% endblock %}
+{% block content %}
+  <section class="section sr-right">
+    <div class="container">
+      <h2 class="section-title" data-i18n="schemes.title">Popular government schemes</h2>
+      <div class="cards">
+        <article class="card">
+          <h3 data-i18n="schemes.card1_title">PM-KISAN</h3>
+          <p data-i18n="schemes.card1_text">Direct income support for farmers.</p>
+          <details>
+            <summary data-i18n="schemes.more">More details</summary>
+            <p data-i18n="schemes.card1_more">Eligibility, installments, and application process explained in simple terms.</p>
+          </details>
+        </article>
+        <article class="card">
+          <h3 data-i18n="schemes.card2_title">Soil Health Card</h3>
+          <p data-i18n="schemes.card2_text">Improve yield with soil insights.</p>
+          <details>
+            <summary data-i18n="schemes.more">More details</summary>
+            <p data-i18n="schemes.card2_more">How to test, interpret reports, and recommended nutrient management.</p>
+          </details>
+        </article>
+        <article class="card">
+          <h3 data-i18n="schemes.card3_title">PMFBY</h3>
+          <p data-i18n="schemes.card3_text">Crop insurance for risk protection.</p>
+          <details>
+            <summary data-i18n="schemes.more">More details</summary>
+            <p data-i18n="schemes.card3_more">Premium, coverage, claim process, and key contacts.</p>
+          </details>
+        </article>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+

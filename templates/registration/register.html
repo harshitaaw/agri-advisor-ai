@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Register - AgriAdvisor{% endblock %}
+{% block content %}
+  <section class="section sr-up">
+    <div class="container" style="max-width: 520px;">
+      <h2 class="section-title">Create account</h2>
+      <form class="card auth-form" action="/register/" method="post" style="padding:16px;">
+        {% csrf_token %}
+        <div class="fields">
+          <div class="field float-label">
+            <input type="text" id="reg-username" name="uname" placeholder=" " />
+            <label for="reg-username">Username (optional)</label>
+          </div>
+          <div class="field float-label">
+            <input type="text" id="reg-name" name="username" placeholder=" " required />
+            <label for="reg-name">Name</label>
+          </div>
+          <div class="field float-label">
+            <input type="email" id="reg-email" name="email" placeholder=" " required />
+            <label for="reg-email">Email</label>
+          </div>
+          <div class="field float-label">
+            <input type="password" id="reg-pass1" name="password1" placeholder=" " required minlength="6" />
+            <label for="reg-pass1">Password</label>
+          </div>
+          <div class="field float-label">
+            <input type="password" id="reg-pass2" name="password2" placeholder=" " required minlength="6" />
+            <label for="reg-pass2">Confirm Password</label>
+          </div>
+          <button type="submit" class="btn primary"><i class="fa-solid fa-user-plus"></i><span>Register</span></button>
+        </div>
+        <p class="muted-text" style="margin-top:10px;">Already have an account? <a class="link" href="{% url 'login' %}">Login</a></p>
+      </form>
+    </div>
+  </section>
+{% endblock %}
+
+

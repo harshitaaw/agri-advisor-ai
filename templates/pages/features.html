@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}AgriAdvisor - Features{% endblock %}
+{% block content %}
+  <section class="section sr-up">
+    <div class="container">
+      <h2 class="section-title" data-i18n="features.title">Platform Features</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-vial"></i></div>
+          <h3 data-i18n="features.card1_title">Crop Diagnosis</h3>
+          <p data-i18n="features.card1_text">Upload plant images to detect diseases and get practical remedies.</p>
+          <a href="{% url 'diagnosis' %}" class="link" data-i18n="features.card1_cta">Try diagnosis →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-landmark"></i></div>
+          <h3 data-i18n="features.card2_title">Government Schemes</h3>
+          <p data-i18n="features.card2_text">Browse schemes tailored for farmers with concise, local-language details.</p>
+          <a href="{% url 'schemes' %}" class="link" data-i18n="features.card2_cta">Explore schemes →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 data-i18n="features.card3_title">AI Assistant</h3>
+          <p data-i18n="features.card3_text">Ask in Hindi or English; get clear, contextual guidance instantly.</p>
+          <a href="{% url 'assistant' %}" class="link" data-i18n="features.card3_cta">Chat now →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+

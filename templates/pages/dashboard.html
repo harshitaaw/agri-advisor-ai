@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}AgriAdvisor - Dashboard{% endblock %}
+{% block content %}
+  <section class="section sr-up">
+    <div class="container">
+      <h2 class="section-title" data-i18n="dashboard.title">Dashboard</h2>
+      <div class="card" style="padding:16px;">
+        <h3 id="dash-welcome">Welcome 👋</h3>
+        <p class="muted-text" data-i18n="dashboard.quick">Access your tools quickly:</p>
+        <div class="actions" style="margin-top:10px;">
+          <a href="{% url 'diagnosis' %}" class="btn"><i class="fa-solid fa-microscope"></i><span data-i18n="dashboard.cta_diagnosis">Crop Diagnosis</span></a>
+          <a href="{% url 'schemes' %}" class="btn"><i class="fa-solid fa-landmark"></i><span data-i18n="dashboard.cta_schemes">Schemes</span></a>
+          <a href="{% url 'assistant' %}" class="btn primary"><i class="fa-solid fa-robot"></i><span data-i18n="dashboard.cta_assistant">AI Assistant</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+

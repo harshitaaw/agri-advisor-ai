@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}AgriAdvisor - Home{% endblock %}
+{% block content %}
+      <section class="hero sr-fade">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1 data-i18n="home.hero_title">Smart agriculture guidance for every Indian farmer</h1>
+            <p data-i18n="home.hero_sub">
+              Get instant crop diagnosis, explore government schemes, and talk to our
+              AI assistant in Hindi. बस पूछिए, समाधान पाइए।
+            </p>
+            <div class="actions">
+              <a href="#assistant" class="btn primary"><i class="fa-solid fa-robot"></i><span data-i18n="home.cta_assistant">Ask the AI Assistant</span></a>
+              <a href="#schemes" class="btn"><i class="fa-solid fa-seedling"></i><span data-i18n="home.cta_schemes">Browse Schemes</span></a>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop" alt="Fields and crops" />
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section sr-up">
+        <div class="container">
+          <h2 class="section-title">Features</h2>
+          <div class="cards">
+            <article class="card">
+              <div class="card-icon"><i class="fa-solid fa-vial"></i></div>
+              <h3>Crop Diagnosis</h3>
+              <p>Upload a photo to detect diseases and get actionable remedies.</p>
+              <a href="{% url 'diagnosis' %}" class="link">Try now →</a>
+            </article>
+            <article class="card">
+              <div class="card-icon"><i class="fa-solid fa-landmark"></i></div>
+              <h3>Govt. Schemes</h3>
+              <p>Discover schemes you qualify for, in your local language.</p>
+              <a href="{% url 'schemes' %}" class="link">Explore →</a>
+            </article>
+            <article class="card">
+              <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+              <h3>AI Assistant</h3>
+              <p>Ask questions in Hindi; get precise, farmer-first answers.</p>
+              <a href="{% url 'assistant' %}" class="link">Chat →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="diagnosis" class="section muted sr-left">
+        <div class="container">
+          <h2 class="section-title">Quick crop check</h2>
+          <form class="upload" data-js="upload-form">
+            <input type="file" accept="image/*" aria-label="Upload crop image" />
+            <button type="button" class="btn"><i class="fa-solid fa-microscope"></i><span>Analyze</span></button>
+          </form>
+          <div class="result" data-js="result" hidden>
+            <h3>Preliminary result</h3>
+            <p>We will show analysis here after you upload an image.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="schemes" class="section sr-right">
+        <div class="container">
+          <h2 class="section-title">Popular government schemes</h2>
+          <ul class="list">
+            <li><a href="#">PM-KISAN</a> — Direct income support for farmers.</li>
+            <li><a href="#">Soil Health Card</a> — Improve yield with soil insights.</li>
+            <li><a href="#">PMFBY</a> — Crop insurance for risk protection.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="assistant" class="section muted sr-up">
+        <div class="container">
+          <h2 class="section-title">Talk to our AI assistant</h2>
+          <div class="chat">
+            <div class="chat-window" data-js="chat-window"></div>
+            <form class="chat-input" data-js="chat-form">
+              <input type="text" placeholder="Type in Hindi or English…" aria-label="Message" />
+              <button type="submit" class="btn primary"><i class="fa-solid fa-paper-plane"></i><span>Send</span></button>
+            </form>
+          </div>
+        </div>
+      </section>
+{% endblock %}

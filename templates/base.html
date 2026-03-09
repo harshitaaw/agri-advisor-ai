@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}AgriAdvisor{% endblock %}</title>
+    <meta name="description" content="AI-powered crop diagnosis, government schemes access, and farming guidance in Hindi." />
+    <link rel="icon" type="image/png" href="{% static 'public/favicon.ico.png' %}?v=4" />
+    <link rel="shortcut icon" href="{% static 'public/favicon.ico' %}?v=4" type="image/x-icon" />
+    <link rel="icon" type="image/x-icon" href="{% static 'public/favicon.ico' %}?v=4" />
+    <link rel="icon" type="image/png" href="{% static 'public/favicon.png' %}?v=3" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'public/favicon-32.png' %}?v=3" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'public/favicon-16.png' %}?v=3" />
+    <link rel="apple-touch-icon" href="{% static 'public/favicon.png' %}?v=3" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body class="page" data-auth="{% if request.user.is_authenticated %}true{% else %}false{% endif %}" data-username="{% if request.user.is_authenticated %}{{ request.user.username }}{% endif %}" data-email="{% if request.user.is_authenticated %}{{ request.user.email }}{% endif %}">
+    <header class="site-header" role="banner">
+      <div class="container navbar">
+        <div class="brand">
+          <span class="logo" aria-hidden="true"><i class="fa-solid fa-wheat-awn"></i></span>
+          <a href="{% url 'home' %}" class="brand-name" data-i18n="brand">AgriAdvisor</a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+        <nav class="nav" id="site-nav" data-js="nav" role="navigation">
+          <a href="{% url 'home' %}" data-i18n="nav.home">Home</a>
+          <a href="{% url 'features' %}" data-i18n="nav.features">Features</a>
+          <a href="{% url 'diagnosis' %}" data-i18n="nav.diagnosis">Crop Diagnosis</a>
+          <a href="{% url 'schemes' %}" data-i18n="nav.schemes">Govt. Schemes</a>
+          <a href="{% url 'assistant' %}" data-i18n="nav.assistant">AI Assistant</a>
+          <a href="{% url 'privacy' %}" data-i18n="nav.privacy">About/Privacy</a>
+          <a href="/admin/">Admin</a>
+          <button class="btn" data-js="lang-toggle" aria-label="Language"><span data-js="lang-label">EN</span></button>
+          <span class="muted-text" data-js="user-greeting" style="display:none;"></span>
+          <a href="{% url 'login' %}" data-js="login-link">Login</a>
+          <a href="{% url 'register' %}" data-js="register-link">Register</a>
+          <a href="#" data-js="logout-link" style="display:none;">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="view" role="main">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand">
+            <span class="logo" aria-hidden="true"><i class="fa-solid fa-wheat-awn"></i></span>
+            <span class="brand-name">AgriAdvisor</span>
+          </div>
+          <p class="muted-text">Empowering farmers with practical, AI-powered guidance.</p>
+        </div>
+        <nav class="footer-nav">
+          <a href="{% url 'features' %}" data-i18n="nav.features">Features</a>
+          <a href="{% url 'schemes' %}" data-i18n="nav.schemes">Schemes</a>
+          <a href="{% url 'assistant' %}" data-i18n="nav.assistant">Assistant</a>
+          <a href="{% url 'privacy' %}" data-i18n="nav.privacy">Privacy</a>
+          <a href="/admin/">Admin</a>
+        </nav>
+      </div>
+      <div class="container copyright">© <span data-js="year"></span> AgriAdvisor</div>
+    </footer>
+
+  <script src="{% static 'agri-config.js' %}"></script>
+  <script src="{% static 'app.js' %}"></script>
+  </body>
+  </html>
+
+

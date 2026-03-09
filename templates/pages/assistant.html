@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}AgriAdvisor - AI Assistant{% endblock %}
+{% block content %}
+  <section class="section sr-up">
+    <div class="container">
+      <h2 class="section-title" data-i18n="assistant.title">AI Assistant</h2>
+      <div class="chat">
+        <div class="chat-window" data-js="chat-window" aria-live="polite" aria-atomic="false"></div>
+        <form class="chat-input" data-js="chat-form">
+          <input type="text" placeholder="Type in Hindi or English…" aria-label="Message" data-i18n-placeholder="assistant.input_placeholder" />
+          <div style="display:flex; gap:8px;">
+            <button type="button" class="btn" aria-label="Voice input (placeholder)"><i class="fa-solid fa-microphone"></i></button>
+            <button type="submit" class="btn primary"><i class="fa-solid fa-paper-plane"></i><span>Send</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Login - AgriAdvisor{% endblock %}
+{% block content %}
+  <section class="section sr-up">
+    <div class="container" style="max-width: 480px;">
+      <h2 class="section-title">Login</h2>
+      <form class="card auth-form" action="/login/" method="post" style="padding:16px;">
+        {% csrf_token %}
+        <div class="fields">
+          <div class="field float-label">
+            <input type="text" name="email" id="login-email" placeholder=" " required />
+            <label for="login-email">Email or Username or Name</label>
+          </div>
+          <div class="field float-label">
+            <input type="password" name="password" id="login-password" placeholder=" " required minlength="6" />
+            <label for="login-password">Password</label>
+          </div>
+          <button type="submit" class="btn primary"><i class="fa-solid fa-right-to-bracket"></i><span>Login</span></button>
+        </div>
+        <p class="muted-text" style="margin-top:10px;">No account? <a class="link" href="{% url 'register' %}">Register</a></p>
+      </form>
+    </div>
+  </section>
+{% endblock %}
+
+

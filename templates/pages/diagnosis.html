@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}AgriAdvisor - Crop Diagnosis{% endblock %}
+{% block content %}
+  <section class="section sr-left">
+    <div class="container">
+      <h2 class="section-title">Crop Diagnosis</h2>
+      <form class="upload" data-js="upload-form" aria-label="Crop image upload" style="flex-wrap: wrap; gap: 10px;">
+        <input type="file" accept="image/*" aria-label="Upload crop image" data-js="img-input" />
+        <input type="text" placeholder="Crop (e.g., Wheat)" aria-label="Crop name" data-js="crop-input" style="flex:1;" />
+        <input type="text" placeholder="Symptoms (spots, yellowing, wilting)" aria-label="Symptoms" data-js="symptoms-input" style="flex:2;" />
+        <button type="button" class="btn"><i class="fa-solid fa-microscope"></i><span>Analyze</span></button>
+      </form>
+      <div class="result" data-js="result" hidden>
+        <h3>Result</h3>
+        <img data-js="preview" alt="Preview" style="max-height:180px; border-radius:12px; margin-bottom:8px;" />
+        <p style="white-space: pre-wrap;">We will show analysis here after you upload an image.</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+
